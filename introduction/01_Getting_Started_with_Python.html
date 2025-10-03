@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Fundamentals</title>
+  <style type="text/css">
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .code-block {
+      width: 49%;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin: 8px 0px;
+    }
+
+    .code {
+      font-family: monospace;
+      font-size: 110%;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      text-align: center;
+      color: #2a6099;
+      font-weight: bold;
+      font-family: Georgia, serif;
+      margin-bottom: 5px;
+    }
+
+    p {
+      text-align: justify;
+      font-family: sans-serif;
+      margin: 5px 0px;
+    }
+
+    ol,
+    ul {
+      text-align: justify;
+      margin: 3px 0px;
+    }
+
+    li {
+      font-family: Cambria, Cochin;
+      font-size: 17px;
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 3px solid #2a6099;
+      border-radius: 5px;
+    }
+
+    .codeName {
+      color: darkgreen;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    pre {
+      margin: 0px;
+    }
+
+    .cmd-block {
+      position: relative;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      border-radius: 8px;
+      padding: 16px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      margin-top: 12px;
+    }
+
+    .cmd-label {
+      position: absolute;
+      top: -12px;
+      left: 12px;
+      background-color: #3c3c3c;
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+    }
+
+    .copy-icon {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      fill: #bbb;
+      transition: fill 0.2s ease;
+    }
+
+    .copy-icon:hover {
+      fill: #fff;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/brown-paper.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+<body style="margin: 30px 40px;">
+  <h4>Understanding Python: Ecosystem, Strengths, and Caveats</h4>
+  <p>Python is a <i>high-level</i>, <i>general-purpose</i> programming language designed with an emphasis on <i>readability</i> and <i>simplicity</i>. Its syntax resembles plain English, which makes it approachable for beginners, yet it remains <em>powerful</em> enough for experienced developers. Unlike Java, which tends to be verbose and heavily relies on explicit structure, Python encourages concise code that reduces boilerplate. This makes it a popular choice for <i>rapid development</i>, <i>prototyping</i>, <i>automation</i>, and <i>scripting</i>, while still being widely adopted in production systems across domains such as <i>web development</i>, <i>data science</i>, <i>machine learning</i>, and <i>embedded systems</i>.</p>
+  <p>The language was created by <b style="font-size: 95%;">Guido van Rossum</b> in the <em>late 1980s</em> and was first released publicly in <em>1991</em>. The name <q style="font-weight: 500;">Python</q> came from Guido's love of the British comedy group Monty Python, not from the snake. Over time, Python grew in popularity thanks to its strong community, its large standard library often described as <q style="font-weight: 500;">batteries included</q>, and the vast ecosystem of third-party libraries that cover almost every possible use case. This ecosystem is one of the major reasons for Python's dominance today, as it provides tools for everything from web frameworks like <em>Django</em> and <em>Flask</em> to data libraries like <em>NumPy</em>, <em>Pandas</em>, and <em>TensorFlow</em>. Real-world usage is everywhere: Instagram's backend runs heavily on Django, Netflix uses Python for data analysis and recommendation systems, and even NASA employs Python in scientific applications.</p>
+  <p style="margin-top: 15px;">At its core, <em>Python</em> offers several features that distinguish it from languages like <em>Java</em>. The syntax is both readable and concise, reducing the cognitive load when understanding or maintaining code. Code blocks are defined by indentation rather than braces, which enforces consistency and clarity. Python is interpreted rather than compiled, meaning programs are executed directly by an interpreter, with the most common being <em>CPython</em>. It supports multiple paradigms, including object-oriented, procedural, and functional programming, and uses dynamic typing, which allows variables to be defined without explicitly declaring their types. Combined with its large standard library, these features make Python a versatile language suitable for many domains.</p>
+  <p style="margin-top: 20px;">A key concept to understand about Python is that there are multiple interpreters or implementations of the language, much like how Java runs on the <em>JVM</em> but can have different runtime environments. The default implementation is <em>CPython</em>, written in <em>C</em>, and this is what most developers use when they download and run Python.</p>
+  <p>Beyond CPython, there are other implementations designed for specific use cases. <i>Jython</i> is written in Java and allows Python code to run on the Java Virtual Machine, while also giving direct access to Java libraries. <i>PyPy</i> is another major implementation, written in a restricted subset of Python called RPython. It uses Just-In-Time compilation to significantly improve performance, often outperforming CPython in computation-heavy workloads. <i>IronPython</i> is built on C# and runs on the .NET framework, making it possible to integrate Python seamlessly with .NET libraries. There are also specialized interpreters such as MicroPython and CircuitPython, which are stripped-down versions optimized for embedded systems and microcontrollers in IoT projects.</p>
+  <p style="margin-top: 15px;">The Python ecosystem plays a central role in its usability. Developers can easily install third-party libraries through <b style="font-size: 95%;">pip</b>, the Python package manager, and these libraries are hosted on the Python Package Index (PyPI). To avoid conflicts between projects, Python provides virtual environments, often created with <b style="font-size: 95%;">venv</b>, which allow developers to isolate dependencies per project. On top of this foundation, Python offers frameworks and tools that cover nearly every area of software development. <em>Django</em> and <em>Flask</em> dominate in web development, <i>FastAPI</i> is gaining popularity for APIs, <em>NumPy</em> and <i>Pandas</i> are central in data science, and <em>TensorFlow</em> and <em>PyTorch</em> lead the machine learning space. The flexibility of switching between implementations like <i>Jython</i>, <em>IronPython</em>, or <em>PyPy</em> further extends Python's reach into platforms such as JVM and .NET.</p>
+  <p style="margin-top: 15px;">Despite its strengths, Python comes with certain caveats that are often raised in interviews. Performance is generally slower than compiled languages like Java or C++, due to its interpreted and dynamically typed nature. However, alternatives such as <i>PyPy</i> or extensions written in C can help bridge this gap when speed is critical.</p>
+  <p>Concurrency is another common discussion point. The default interpreter, <i>CPython</i>, includes the Global Interpreter Lock (GIL), which prevents multiple threads from executing Python bytecode at the same time. This makes Python less efficient for CPU-bound multi-threaded tasks. Developers typically work around this limitation by using multiprocessing, asynchronous programming with asyncio, or offloading performance-critical work to native extensions.</p>
+  <p>Dynamic typing is both a strength and a weakness. It provides flexibility and faster development, but it can lead to runtime errors that static type systems like Java's catch at compile time. Modern tools such as type hints and static analyzers like <i>mypy</i> have made it possible to add stronger type guarantees without losing Python's dynamic nature.</p>
+  <br>
+  <p>Python is indeed an interpreted language, but what actually happens under the hood is that Python first compiles your code into something called bytecode before the interpreter runs it. This bytecode is a lower-level, platform-independent representation of your program that the Python interpreter understands more easily than raw source code. To avoid compiling the same code again and again every time you run the program, Python sometimes saves this bytecode into files with a <span class="code" style="background-color: ghostwhite;">.pyc</span> extension. These files live inside a special folder called <span class="code" style="background-color: aliceblue;">__pycache__</span>.</p>
+  <p>A <span class="code" style="background-color: ghostwhite;">.pyc</span> file is created when you import a module for the first time. Python compiles the module into bytecode and stores it so that the next time you run the program, it can load the precompiled bytecode instead of recompiling the source code. This makes startup a little faster. However, if you are just running a script directly without importing it as a module, Python does not usually bother saving a <i>.pyc</i> file because there's no real benefit in caching it. Also, if the Python process does not have permission to write to disk, or if you explicitly disable bytecode writing using options like <span class="code" style="background-color: aliceblue;">python -B</span>, then <span class="code" style="background-color: ghostwhite;">.pyc</span> files will not be created either.</p>
+  <p>So, <span class="code" style="background-color: ghostwhite;">.pyc</span> files do not change the fact that Python is interpreted — they are just a handy optimization that saves time when importing modules repeatedly.</p>
+  <p style="color: purple; font-weight: bold; margin-bottom: 0px; margin-top: 15px;">Comments in Python</p>
+  <div class="container">
+    <div class="code-block" style="margin: 0px; width: 75%;">
+      <p style="margin-top: 0px;">In Python, comments are used to explain the code and are ignored by the interpreter. To write a comment, simply start the line with the <b style="background-color: ghostwhite; font-size: 95%;">#</b> symbol. Anything after <b style="background-color: ghostwhite; font-size: 95%;">#</b> on the same line is treated as a comment.</p>
+      <p>Python does not have a specific syntax for multiline comments, but you can use triple quotes (<span class="code" style="background-color: ghostwhite;">'''</span> or <span class="code" style="background-color: ghostwhite;">"""</span>) to create a block of text that will be ignored by the interpreter if it's not assigned to a variable. This is commonly used for multiline comments.</p>
+      <p>Triple quotes are typically used for docstrings, which are documentation strings that describe functions, classes, or modules. However, when not used in docstrings, triple quotes can also serve as multiline comments.</p>
+    </div>
+    <pre class="code-block" style="width: 23%; border-radius: 12px;"><code class="language-java" style="border-radius: 10px;">"""
+This is a 
+multiline comment
+in Python.
+"""</code></pre>
+  </div>
+
+  <p style="color: purple; font-weight: bold; margin-bottom: 0px; margin-top: 15px;">Understanding print()</p>
+  <div class="container">
+    <div class="code-block" style="margin: 0px; width: 65%;">
+      <p style="margin-top: 0px;">In Python, the print() function is used to display information on the console. It is one of the most commonly used functions and comes built-in, so you don't need to import anything to use it. By default, print() adds a new line after each output.</p>
+      <p>If you don't want a new line after each call, you can control this using the <span class="code" style="background-color: ghostwhite;">end</span> parameter. Here, <span class="code" style="background-color: ghostwhite;">end=" "</span> replaced the default new line with a space.</p>
+      <p style="margin-top: 15px;">You can also print multiple values in a single call by separating them with commas. Python automatically adds a space between them. If you like to use something other than a space, you can change the separator with the <span class="code" style="background-color: ghostwhite;">sep</span> parameter.</p>
+    </div>
+    <pre class="code-block" style="margin: 0px; width: 33%;"><code class="language-python" style="border-radius: 10px;">print(&quot;Python&quot;)
+print(&quot;is fun&quot;)
+# output: Python
+# is fun
+print(&quot;Python&quot;, end=&quot; &quot;)
+print(&quot;is fun&quot;, end=&quot;&quot;)
+#output: Python is fun</code></pre>
+  </div>
+  <div class="container">
+    <pre class="code-block" style="margin: 0px; width: 33%;"><code class="language-python" style="border-radius: 10px;">print(&quot;I&quot;, &quot;love&quot;, &quot;Python&quot;)
+#output: I love Python
+print(&quot;I&quot;, &quot;love&quot;, &quot;Python&quot;, sep=&quot;-&quot;)
+#output: I-love-Python</code></pre>
+    <div class="code-block" style="margin: 0px; width: 65%;">
+      <p style="margin-top: 2px;">Printing variables along with text is straightforward by separating them with commas.</p>
+      <p>For cleaner and more powerful formatting, Python 3.6 introduced f-strings, which let you embed variables directly inside strings. This approach is now considered the best practice because it is faster, clearer, and easier to read.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="code-block" style="margin: 0px; width: 45%;">
+      <p>Before f-strings, Python relied on <span class="code" style="background-color: ghostwhite;">.format()</span> and even older <span class="code" style="background-color: ghostwhite;">%</span> formatting. You may still encounter them in older codebases. The <span class="code" style="background-color: ghostwhite;">.format()</span> method lets you substitute values into placeholders <span class="code" style="background-color: ghostwhite;">{}</span> inside a string. And the older % style, inspired by C, looks like the example.</p>
+      <p>All of these methods give the same result, but f-strings are preferred in modern Python code.</p>
+      <p style="margin-top: 15px;">The <span class="code" style="background-color:whitesmoke;">print()</span> function can also handle special characters. For example, <span class="code" style="background-color: aliceblue;">\n</span> creates a new line and <span class="code" style="background-color: aliceblue;">\t</span> adds a tab. If you call <span class="code" style="background-color: whitesmoke;">print()</span> without arguments, it simply prints a blank line.</p>
+    </div>
+    <pre class="code-block" style="margin: 0px; width: 53%;"><code class="language-python" style="border-radius: 10px;">name = &quot;Alice&quot;
+age = 25
+print(&quot;My name is&quot;, name, &quot;and I am&quot;, age, &quot;years old.&quot;)
+print(f&quot;My name is {name} and I am {age} years old.&quot;) #f-strings
+print(&quot;My name is {} and I am {} years old.&quot;.format(name, age)) #.format() method
+print(&quot;My name is {1} and I am {0} years old.&quot;.format(age, name)) #controling order of placeholders
+print(&quot;My name is {n} and I am {a} years old.&quot;.format(n=&quot;Alice&quot;, a=25)) #named placeholders
+print(&quot;My name is %s and I am %d years old.&quot; % (name, age))
+#output (6 times): My name is Alice and I am 25 years old.</code></pre>
+  </div>
+  <div class="container">
+    <pre class="code-block" style="margin: 0px; width: 43%;"><code class="language-python" style="border-radius: 10px;">with open(&quot;output.txt&quot;, &quot;w&quot;) as f:
+    print(&quot;Writing into a file!&quot;, file=f)</code></pre>
+    <div class="code-block" style="margin: 0px; width: 55%;">
+      <p>Sometimes you may want to send output to a file instead of showing it on the screen. This can be done with the file parameter. This will create or overwrite a file named <span class="code" style="background-color: ghostwhite;">output.txt</span> with the given text.</p>
+    </div>
+  </div>
+  <p>It's worth noting that in Python 2, print was not a function but a statement, so you could write <span class="code" style="background-color: aliceblue;">print <q>Hello</q></span>. Starting from Python 3, print is always a function, which is why parentheses are required.</p>
+  <p style="color: purple; font-weight: bold; margin-bottom: 0px; margin-top: 15px;">Working with Variables</p>
+  <p style="margin-top: 0px;">Python is a dynamically typed language, which means that when you create a variable, you don't need to specify its type. The type is decided automatically by Python based on the value you assign. For example, if you assign text, it becomes a string; if you assign a number, it becomes an integer; and if you assign <span class="code" style="background-color: ghostwhite;">True</span> or <span class="code" style="background-color: ghostwhite;">False</span>, it becomes a boolean. You can check the data type of any variable using the <span class="code" style="background-color: aliceblue;">type()</span> function.</p>
+  <div class="container">
+    <pre class="code-block" style="margin: 0px; width: 30%;"><code class="language-python" style="border-radius: 10px;">name = &quot;Alice&quot;
+age = 25
+is_allowed = True
+
+print(type(name)) # &lt;class &#39;str&#39;&gt;
+print(type(age)) # &lt;class &#39;int&#39;&gt;
+print(type(is_allowed)) # &lt;class &#39;bool&#39;&gt;</code></pre>
+    <div class="code-block" style="margin: 0px; width: 67%;">
+      <p style="margin-top: 0px;">In this example, <span class="code" style="background-color: ghostwhite;">name</span> is a string, <span class="code" style="background-color: ghostwhite;">age</span> is an integer, and <span class="code" style="background-color: ghostwhite;">is_allowed</span> is a boolean.</p>
+      <p style="margin-top: 15px;">When naming variables in Python, there are a few rules you must follow. A variable name cannot begin with a number, and it cannot contain special characters other than the underscore (<span class="code" style="background-color: aliceblue;">_</span>). For instance, names like <span class="code" style="background-color: whitesmoke;">user1</span>, <span class="code" style="background-color: whitesmoke;">user_name</span>, or <span class="code" style="background-color: whitesmoke;">is_valid</span> are valid, but <span class="code" style="background-color: whitesmoke;">1user</span> or <span class="code" style="background-color: whitesmoke;">user-name</span> are not.</p>
+    </div>
+  </div>  
+  <p style="margin-top: 2px;">Along with rules, there are also naming conventions that developers follow to keep code consistent and readable. These conventions are part of <b style="font-size: 85%;">PEP 8</b>, the official Python style guide. Variables and functions are usually written in <b style="font-size: 90%;">snake_case</b>, where all letters are lowercase and words are separated by underscores, such as <span class="code" style="background-color: ghostwhite;">total_count</span> or <span class="code" style="background-color: ghostwhite;">user_name</span>. Constants, which are values that should not be changed, are written in <b style="font-size: 85%;">UPPER_CASE</b>, like <span class="code" style="background-color: ghostwhite;">MAX_VALUE</span>. Although Python does not strictly enforce constants&mdash;meaning you technically can reassign them&mdash;the uppercase naming serves as a signal to other developers that the value should not be modified. Classes, on the other hand, follow <b style="font-size: 90%;">PascalCase</b>, where each word starts with a capital letter, for example, <span class="code" style="background-color: ghostwhite;">MyClass</span> or <span class="code" style="background-color: ghostwhite;">StudentRecord</span>.</p>
+  <p>Sometimes you may also see camelCase, where the first word starts lowercase and the following words start with uppercase letters, such as <span class="code" style="background-color: ghostwhite;">userName</span>. While this is common in some other programming languages, in Python the preferred style is <b style="font-size: 90%;">snake_case</b> for variables and functions, <b style="font-size: 90%;">PascalCase</b> for classes, and <b style="font-size: 85%;">UPPER_CASE</b> for constants.</p>
+  <p style="color: purple; font-weight: bold; margin-bottom: 0px; margin-top: 15px;">Data Types in Python</p>
+  <p style="margin-top: 0px;">Data types define the kind of value stored in a variable. Since Python is a dynamically typed language, you don't need to declare the type of a variable when you create it. The type is automatically decided based on the value you assign. For example, <span class="code" style="background-color: ghostwhite;">x = 5</span> makes x an integer, while <span class="code" style="background-color: ghostwhite;">x = "hello"</span> makes x a string. You can always check the type of a variable using the built-in <span class="code" style="background-color: aliceblue;">type()</span> function, such as <span class="code" style="background-color: ghostwhite;">print(type(x))</span>.</p>
+  <p>Python automatically assigns the type of a variable based on its value, and it provides several built-in data types to handle different kinds of data.</p>
+  <p style="margin-bottom: 0px;">Basic Built-in Data Types</p>
+  <ul style="margin-top: 0px;">
+    <li>
+      <b style="font-size: 90%;">Numeric Types:</b> int, float, complex
+      <ul>
+        <li>Integers (int) represent whole numbers, e.g., <span class="code" style="background-color: ghostwhite; font-size: 90%;">x = 10</span>.</li>
+        <li>Floating-point numbers (float) represent decimals, e.g., <span class="code" style="background-color: ghostwhite; font-size: 90%;">y = 3.14</span> or <span class="code" style="background-color: ghostwhite; font-size: 90%;">y = 12/3</span>. Python doesn't have a separate <span class="code" style="background-color: ghostwhite; font-size: 90%;">double</span> type.</li>
+        <li>Complex numbers (complex) include a real and imaginary part, e.g., <span class="code" style="background-color: ghostwhite; font-size: 90%;">z = 2 + 3j</span>.</li>
+      </ul>
+    </li>
+    <li>
+      <b style="font-size: 90%;">Text Type:</b> str
+      <ul>
+        <li>Strings are sequences of text, e.g., <span class="code" style="background-color: ghostwhite; font-size: 90%;">name = "Alice"</span>.</li>
+        <li>They are immutable, meaning once created, they cannot be changed.</li>
+        <li>Both single and double quotes can be used, and there is no separate <span class="code" style="background-color: ghostwhite; font-size: 90%;">char</span> type &mdash; a single character is just a string of length one.</li>
+      </ul>
+    </li>
+    <li>
+      <b style="font-size: 90%;">Boolean Type:</b> bool
+      <ul>
+        <li>A boolean can only be <span class="code" style="background-color: ghostwhite; font-size: 90%;">True</span> or <span class="code" style="background-color: ghostwhite; font-size: 90%;">False</span>.</li>
+        <li>They are commonly the result of comparisons, e.g., <span class="code" style="background-color: ghostwhite; font-size: 90%;">5 &gt; 3</span> evaluates to <span class="code" style="background-color: ghostwhite; font-size: 90%;">True</span>.</li>
+      </ul>
+    </li>
+    <li>
+      <b>Sequence Types:</b> list, tuple, range
+      <ul>
+        <li>Lists are ordered, mutable collections: <span class="code" style="background-color: ghostwhite; font-size: 90%;">nums = [1, 2, 3]</span>.</li>
+        <li>Tuples are ordered, immutable collections: <span class="code" style="background-color: ghostwhite; font-size: 90%;">coords = (10, 20)</span>.</li>
+        <li>Ranges represent a sequence of numbers, often used in loops: <span class="code" style="background-color: ghostwhite; font-size: 90%;">range(5)</span>.</li>
+      </ul>
+    </li>
+    <li>
+      <b style="font-size: 90%;">Set Types:</b> set, frozenset
+      <ul>
+        <li>A set is an unordered collection of unique elements: <span class="code" style="background-color: ghostwhite; font-size: 90%;">s = {1, 2, 3}</span>.</li>
+        <li>A frozenset is the immutable version of a set.</li>
+      </ul>
+    </li>
+    <li>
+      <b style="font-size: 90%;">Mapping Type:</b> dict
+      <ul>
+        <li>Dictionaries store data as key-value pairs: <span class="code" style="background-color: ghostwhite; font-size: 90%;">student = {"name": "Alice", "age": 25}</span>.</li>
+        <li>Keys must be immutable types (like strings or numbers), but values can be of any type.</li>
+      </ul>
+    </li>
+    <li>
+      <b style="font-size: 90%;">Binary Types:</b> bytes, bytearray, memoryview
+      <ul>
+        <li>These represent sequences of bytes, useful for working with files, images, or network data.</li>
+      </ul>
+    </li>
+    <li>
+      <b style="font-size: 90%;">Special Type:</b> NoneType
+      <ul>
+        <li>Python has a special type called <span class="code" style="background-color: ghostwhite; font-size: 90%;">NoneType</span>, with a single value <span class="code" style="background-color: ghostwhite; font-size: 90%;">None</span>.</li>
+        <li>It represents the absence of a value, for example, when a function doesn't explicitly return anything.</li>
+      </ul>
+    </li>
+  </ul>
+  <p style="color: seagreen; font-weight: bold; margin-bottom: 0px; margin-top: 15px;">Type Conversion</p>
+  <p style="margin: 0px;">You can convert data types explicitly using functions like <span class="code" style="background-color: ghostwhite;">int()</span>, <span class="code" style="background-color: ghostwhite;">float()</span>, <span class="code" style="background-color: ghostwhite;">str()</span>, <span class="code" style="background-color: ghostwhite;">list()</span>, and so on. This is called explicit type casting. Sometimes Python converts types automatically, which is called implicit type coercion.</p>
+  <div class="container">
+    <pre class="code-block" style="margin: 0px;"><code class="language-python" style="border-radius: 10px;">x = &quot;10&quot;
+y = int(x)   # converts string &quot;10&quot; into integer 10</code></pre>
+    <pre class="code-block" style="margin: 0px;"><code class="language-python" style="border-radius: 10px;">print(3 + 4.5)  # int is converted to float, result is 7.5</code></pre>
+  </div>
+  <div class="container">
+    <div class="code-block">
+      <p style="color: seagreen; font-weight: bold; margin-bottom: 0px;">Mutability and Immutability</p>
+      <p style="margin: 0px;">Some data types can be changed after creation (mutable), while others cannot (immutable):</p>
+      <ul>
+        <li><b style="font-size: 90%;">Mutable:</b> lists, sets, dictionaries</li>
+        <li><b style="font-size: 90%;">Immutable:</b> strings, tuples, frozensets</li>
+      </ul>
+    </div>
+    <div class="code-block">
+      <p style="color: seagreen; font-weight: bold; margin-bottom: 0px;">Truthiness in Python</p>
+      <p style="margin-top: 0px;">Certain values are treated as <span class="code" style="background-color: ghostwhite;">False</span> in conditions, such as:</p>
+      <p><span class="code" style="background-color: ghostwhite;">0</span>, <span class="code" style="background-color: ghostwhite;">0.0</span>, <span class="code" style="background-color: ghostwhite;">""</span> (empty string), <span class="code" style="background-color: ghostwhite;">[]</span> (empty list), <span class="code" style="background-color: ghostwhite;">{}</span> (empty dictionary), <span class="code" style="background-color: ghostwhite;">set()</span> (empty set), <span class="code" style="background-color: ghostwhite;">None</span>, and <span class="code" style="background-color: ghostwhite;">False</span>. Everything else is treated as <span class="code" style="background-color: ghostwhite;">True</span>.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="code-block" style="width: 35%;">
+      <p style="color: seagreen; font-weight: bold; margin-bottom: 0px;">Equality vs Identity</p>
+      <p style="margin-top: 0px;">Python distinguishes between equality (<span class="code" style="background-color: aliceblue;">==</span>) and identity (<span class="code" style="background-color: aliceblue;">is</span>).</p>
+      <ul>
+        <li><b class="code" style="background-color: ghostwhite; font-size: 90%;">==</b> checks if two values are equal.</li>
+        <li><b class="code" style="background-color: ghostwhite; font-size: 90%;">is</b> checks if two variables point to the same object in memory.</li>
+      </ul>
+      <pre><code class="language-python" style="border-radius: 10px;">a = [1, 2, 3]
+b = [1, 2, 3]
+print(a == b)  # True
+print(a is b)  # False (different objects in memory)</code></pre>
+    </div>
+    <div class="code-block" style="width: 63%;">
+      <p style="color: seagreen; font-weight: bold; margin-bottom: 0px;">Interview Pitfalls</p>
+      <p style="margin-top: 0px;">A common interview question is why you should avoid using mutable types like lists or dictionaries as default arguments in functions. This is because Python creates the default object only once, and it persists across function calls, which can lead to unexpected behavior.</p>
+      <p style="margin-bottom: 0px;">Another frequently asked point is the difference between <span class="code" style="background-color: ghostwhite;">type()</span> and <span class="code" style="background-color: ghostwhite;">isinstance()</span>. While <span class="code" style="background-color: ghostwhite;">type()</span> shows the exact type of an object, <span class="code" style="background-color: ghostwhite;">isinstance()</span> is preferred because it supports inheritance.</p>
+      <pre><code class="language-python" style="border-radius: 10px;">isinstance(5, int)       # True
+isinstance(True, int)    # True (since bool is a subclass of int)
+isinstance(3.5, (int,float))  # True</code></pre>
+    </div>
+  </div>
+  <p style="color: seagreen; font-weight: bold; margin-bottom: 0px;">What Python Does Not Have</p>
+  <p style="margin-top: 0px;">To keep things simpler, Python does not include some low-level data types found in other languages, such as <span class="code" style="background-color: whitesmoke;">char</span>, <span class="code" style="background-color: whitesmoke;">byte</span>, <span class="code" style="background-color: whitesmoke;">short</span>, <span class="code" style="background-color: whitesmoke;">long</span>, <span class="code" style="background-color: whitesmoke;">unsigned int</span>, <span class="code" style="background-color: whitesmoke;">double</span>, <span class="code" style="background-color: whitesmoke;">struct</span>, <span class="code" style="background-color: whitesmoke;">enum</span>, or <span class="code" style="background-color: whitesmoke;">pointers</span>. Instead, it relies on its built-in high-level types.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--
+    style="width: 55%; border-radius: 5px; overflow-x: auto; margin: 8px 0px;"
+    <span style="font-family: monospace; font-size: 105%;">
+    <p style="color: purple; font-weight: bold; margin-bottom: 0px;">Heading</p>
+    <p style="margin-top: 0px;"></p>
+-->
+
+  <!-- Code Single
+<p class="codeName">Class Name</p>
+<pre><code class="language-java" style="border-radius: 10px;">
+    Class Code
+</code></pre>
+-->
+
+  <!-- Code Double
+<div class="container">
+    <pre class="code-block"><code class="language-python" style="border-radius: 10px;">code1</code></pre>
+    <pre class="code-block"><code class="language-python" style="border-radius: 10px;">code2</code></pre>
+</div>
+-->
+
+  <!-- commands
+            <div class="cmd-block" style="width: 30%;">
+                <div class="cmd-label">heading</div>
+                <svg class="copy-icon"
+                     onclick="(function() {
+                       navigator.clipboard.writeText('docker ps')
+                         .then(() => console.log('Copied!'))
+                         .catch(err => console.error('Failed to copy: ', err));
+                     })()"
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     style="cursor: pointer; width: 20px; height: 20px;">
+                  <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
+                </svg>
+                <pre>docker ps</pre>
+              </div>
+-->
+
+  <!-- Command Double
+            <div class="container">
+                <div class="code-block" style="width: 29%;">
+                    <div class="cmd-block">
+                        <div class="cmd-label">docker run</div>
+                        <svg class="copy-icon"
+                             onclick="(function() {
+                               navigator.clipboard.writeText('docker run')
+                                 .then(() => console.log('Copied!'))
+                                 .catch(err => console.error('Failed to copy: ', err));
+                             })()"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 24 24"
+                             style="cursor: pointer; width: 20px; height: 20px;">
+                          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
+                        </svg>
+                        <pre>docker run</pre>
+                      </div>
+                </div>
+                <div class="code-block" style="width: 70%;">
+                    <p style="margin-top: 12px;"></p>
+                </div>
+            </div>
+-->
+
+  <!-- Image code
+<img src="" alt="alt" style="width: 70%; border: none;" />
+
+<div style="width: 90%; height: 350px; display: block; overflow: auto; border: 3px solid #2a6099; margin: 0px auto; border-radius: 8px;">
+  <img src="" alt="creating AWS Lambda Function" style="width: 100%; border: none;" />
+</div>
+-->
+
+  <script>
+    hljs.highlightAll(); 
+  </script>
+  <script>
+    function copyToClipboard() {
+      const text = document.getElementById("command").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        console.log("Copied!");
+      }).catch(err => {
+        console.error("Failed to copy: ", err);
+      });
+    }
+  </script>
+</body>
+
+</html>
