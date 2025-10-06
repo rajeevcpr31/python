@@ -274,7 +274,7 @@ print(type(is_allowed)) # &lt;class &#39;bool&#39;&gt;</code></pre>
     </li>
   </ul>
   <p style="color: seagreen; font-weight: bold; margin-bottom: 0px; margin-top: 15px;">Type Conversion</p>
-  <p style="margin: 0px;">You can convert data types explicitly using functions like <span class="code" style="background-color: ghostwhite;">int()</span>, <span class="code" style="background-color: ghostwhite;">float()</span>, <span class="code" style="background-color: ghostwhite;">str()</span>, <span class="code" style="background-color: ghostwhite;">list()</span>, and so on. This is called explicit type casting. Sometimes Python converts types automatically, which is called implicit type coercion.</p>
+  <p style="margin: 0px;">You can convert data types explicitly using functions like <span class="code" style="background-color: ghostwhite;">int()</span>, <span class="code" style="background-color: ghostwhite;">float()</span>, <span class="code" style="background-color: ghostwhite;">complex()</span>, <span class="code" style="background-color: ghostwhite;">str()</span>, <span class="code" style="background-color: ghostwhite;">bool()</span>, <span class="code" style="background-color: ghostwhite;">list()</span>, <span class="code" style="background-color: ghostwhite;">tuple()</span> and so on. This is called explicit type casting. Sometimes Python converts types automatically, which is called implicit type coercion.</p>
   <div class="container">
     <pre class="code-block" style="margin: 0px;"><code class="language-python" style="border-radius: 10px;">x = &quot;10&quot;
 y = int(x)   # converts string &quot;10&quot; into integer 10</code></pre>
@@ -319,114 +319,6 @@ isinstance(3.5, (int,float))  # True</code></pre>
   </div>
   <p style="color: seagreen; font-weight: bold; margin-bottom: 0px;">What Python Does Not Have</p>
   <p style="margin-top: 0px;">To keep things simpler, Python does not include some low-level data types found in other languages, such as <span class="code" style="background-color: whitesmoke;">char</span>, <span class="code" style="background-color: whitesmoke;">byte</span>, <span class="code" style="background-color: whitesmoke;">short</span>, <span class="code" style="background-color: whitesmoke;">long</span>, <span class="code" style="background-color: whitesmoke;">unsigned int</span>, <span class="code" style="background-color: whitesmoke;">double</span>, <span class="code" style="background-color: whitesmoke;">struct</span>, <span class="code" style="background-color: whitesmoke;">enum</span>, or <span class="code" style="background-color: whitesmoke;">pointers</span>. Instead, it relies on its built-in high-level types.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!--
-    style="width: 55%; border-radius: 5px; overflow-x: auto; margin: 8px 0px;"
-    <span style="font-family: monospace; font-size: 105%;">
-    <p style="color: purple; font-weight: bold; margin-bottom: 0px;">Heading</p>
-    <p style="margin-top: 0px;"></p>
--->
-
-  <!-- Code Single
-<p class="codeName">Class Name</p>
-<pre><code class="language-java" style="border-radius: 10px;">
-    Class Code
-</code></pre>
--->
-
-  <!-- Code Double
-<div class="container">
-    <pre class="code-block"><code class="language-python" style="border-radius: 10px;">code1</code></pre>
-    <pre class="code-block"><code class="language-python" style="border-radius: 10px;">code2</code></pre>
-</div>
--->
-
-  <!-- commands
-            <div class="cmd-block" style="width: 30%;">
-                <div class="cmd-label">heading</div>
-                <svg class="copy-icon"
-                     onclick="(function() {
-                       navigator.clipboard.writeText('docker ps')
-                         .then(() => console.log('Copied!'))
-                         .catch(err => console.error('Failed to copy: ', err));
-                     })()"
-                     xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     style="cursor: pointer; width: 20px; height: 20px;">
-                  <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
-                </svg>
-                <pre>docker ps</pre>
-              </div>
--->
-
-  <!-- Command Double
-            <div class="container">
-                <div class="code-block" style="width: 29%;">
-                    <div class="cmd-block">
-                        <div class="cmd-label">docker run</div>
-                        <svg class="copy-icon"
-                             onclick="(function() {
-                               navigator.clipboard.writeText('docker run')
-                                 .then(() => console.log('Copied!'))
-                                 .catch(err => console.error('Failed to copy: ', err));
-                             })()"
-                             xmlns="http://www.w3.org/2000/svg"
-                             viewBox="0 0 24 24"
-                             style="cursor: pointer; width: 20px; height: 20px;">
-                          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
-                        </svg>
-                        <pre>docker run</pre>
-                      </div>
-                </div>
-                <div class="code-block" style="width: 70%;">
-                    <p style="margin-top: 12px;"></p>
-                </div>
-            </div>
--->
-
-  <!-- Image code
-<img src="" alt="alt" style="width: 70%; border: none;" />
-
-<div style="width: 90%; height: 350px; display: block; overflow: auto; border: 3px solid #2a6099; margin: 0px auto; border-radius: 8px;">
-  <img src="" alt="creating AWS Lambda Function" style="width: 100%; border: none;" />
-</div>
--->
-
   <script>
     hljs.highlightAll(); 
   </script>
@@ -441,5 +333,4 @@ isinstance(3.5, (int,float))  # True</code></pre>
     }
   </script>
 </body>
-
 </html>

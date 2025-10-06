@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <style type="text/css">
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .code-block {
+            width: 49%;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 8px 0px;
+        }
+        .code {
+            font-family: monospace; 
+            font-size: 110%;
+        }
+
+        h2,h3,h4,h5 {text-align: center; color: #2a6099; font-weight: bold; font-family: Georgia, serif; margin-bottom: 5px;}
+		p {text-align: justify; font-family: sans-serif; margin: 5px 0px;}
+        ol,ul {text-align: justify; margin: 3px 0px;}
+        li {font-family: Cambria, Cochin; font-size:17px;}
+		img {display: block; margin-left: auto; margin-right: auto; border: 3px solid #2a6099; border-radius: 5px;}
+        .codeName {color: darkgreen; text-align: center;}
+        a {text-decoration: none;}
+        pre {margin: 0px;}
+
+    .cmd-block {
+      position: relative;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      border-radius: 8px;
+      padding: 16px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      margin-top: 12px;
+    }
+
+    .cmd-label {
+      position: absolute;
+      top: -12px;
+      left: 12px;
+      background-color: #3c3c3c;
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+    }
+
+    .copy-icon {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      fill: #bbb;
+      transition: fill 0.2s ease;
+    }
+
+    .copy-icon:hover {
+      fill: #fff;
+    }
+	</style>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/brown-paper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+<body style="margin: 30px 40px;">
+    <h4>All You Need to Know About Strings</h4>
+  <div class="container">
+    <div class="code-block" style="width: 70%;"><p style="margin-top: 0px;">In Python, strings are one of the most widely used data types. When you create a string, each character in that string is stored as <b style="font-size: 90%;">Unicode</b> in memory. Unicode is a universal character encoding system that assigns a unique code point to every character across all languages. For example, <q>A</q> has the Unicode value 65, while the emoji <q>😀</q> has the Unicode value 128512. You can check the Unicode of any character using the <span class="code" style="background-color: ghostwhite;">ord()</span> function and convert it back to a character using the <span class="code" style="background-color: ghostwhite;">chr()</span> function.</p></div>
+    <pre class="code-block" style="width: 28%;"><code class="language-python" style="border-radius: 10px;">print(ord(&quot;😀&quot;)) # 128512
+print(chr(65)) # A</code></pre>
+  </div>
+  <p style="margin-top: 0px;">Strings in Python support indexing, which allows you to access individual characters directly. Indexing starts at 0 and goes up to the length of the string minus one. Negative indexing is also supported, which lets you access characters from the end. For example, if <span class="code" style="background-color: aliceblue;">greet = "Hello World"</span>, then <span class="code" style="background-color: ghostwhite;">greet[0]</span> will give <q>H</q> and <span class="code" style="background-color: ghostwhite;">greet[-1]</span> will give <q>d</q>.</p>
+  <p>Slicing is another powerful feature of strings. It allows you to extract a portion of the string by providing a start index, an end index (exclusive), and an optional step value. If the start index is not given, it begins from the start of the string. If the end index is not given, it goes till the end. If the step is not provided, it defaults to 1. For instance, <span class="code" style="background-color: ghostwhite;">greet[0:5]</span> results in <q>Hello</q>, <span class="code" style="background-color: ghostwhite;">greet[0::2]</span> gives <q>HloWrd</q>, and <span class="code" style="background-color: ghostwhite;">greet[:5]</span> also results in <q>Hello</q>. However, it's important to remember that strings are immutable, so you cannot change a slice directly. For example, trying <span class="code" style="background-color: ghostwhite;">greet[0:2] = "Hi"</span> will raise a <span class="code" style="background-color:antiquewhite;">TypeError</span> saying that <span class="code" style="background-color: whitesmoke;">'str' object does not support item assignment</span>.</p>
+  <p style="margin-top: 12px;">A very important property of strings is that they are immutable. Once created, the contents of a string cannot be changed. Any modification, like concatenation or replacement, creates a new string object instead of altering the original. For example, <span class="code" style="background-color: aliceblue;">"Hello" + "World"</span> creates a new string <q>HelloWorld</q>, and <span class="code" style="background-color: aliceblue;">"Hi" * 3</span> creates <q>HiHiHi</q>. This immutability makes strings safe to use in many situations but is also the reason why operations that heavily modify strings can be slower compared to mutable types.</p>
+  <p style="margin-top: 12px; margin-bottom: 0px;">Python provides a rich set of string methods that make text manipulation easy. Some of the most commonly used ones are:</p>
+  <ul>
+    <li><b style="font-size: 90%;">upper():</b> Converts the string into uppercase. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">"hi".upper()</span> → "HI"</li>
+    <li><b style="font-size: 90%;">lower():</b> Converts the string into lowercase. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">"Hi".lower()</span> → "hi"</li>
+    <li><b style="font-size: 90%;">title():</b> Capitalizes the first letter of each word. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">"hello world".title()</span> → "Hello World"</li>
+    <li><b style="font-size: 90%;">capitalize():</b> Capitalizes only the first character. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">"python".capitalize()</span> → "Python"</li>
+    <li><b style="font-size: 90%;">strip():</b> Removes leading and trailing whitespace. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">" hi ".strip()</span> → "hi"</li>
+    <li><b style="font-size: 90%;">lstrip() / rstrip():</b> Removes whitespace from the left or right side.</li>
+    <li><b style="font-size: 90%;">replace(old, new):</b> Replaces part of the string. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">"hello".replace("l", "x")</span> → "hexxo"</li>
+    <li><b style="font-size: 90%;">split(delimiter):</b> Splits the string into a list. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">"a,b,c".split(",")</span> → ["a", "b", "c"]</li>
+    <li><b style="font-size: 90%;">join(iterable):</b> Joins a list of strings into one string. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">",".join(["a", "b", "c"])</span> → "a,b,c"</li>
+    <li><b style="font-size: 90%;">startswith() / endswith():</b> Checks if a string starts or ends with a given substring.</li>
+    <li><b style="font-size: 90%;">find():</b> Returns the index of the first occurrence of a substring, or -1 if not found.</li>
+    <li><b style="font-size: 90%;">count():</b> Counts how many times a substring appears. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">"banana".count("a")</span> → 3</li>
+    <li><b style="font-size: 90%;">isalnum():</b> Returns True if all characters are alphanumeric.</li>
+    <li><b style="font-size: 90%;">isalpha():</b> Returns True if all characters are alphabetic.</li>
+    <li><b style="font-size: 90%;">isdigit():</b> Returns True if all characters are digits.</li>
+    <li><b style="font-size: 90%;">isspace():</b> Returns True if all characters are whitespace.</li>
+    <li><b style="font-size: 90%;">swapcase():</b> Swaps uppercase to lowercase and vice versa. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">"PyThOn".swapcase()</span> → "pYtHoN"</li>
+    <li><b style="font-size: 90%;">len():</b> Returns the number of characters in a string, including spaces and special characters. Example: <span class="code" style="background-color: ghostwhite; font-size: 90%;">len("Hello")</span>  → 5</li>
+  </ul>
+  <p>Strings also support membership operations using <span class="code" style="background-color: aliceblue;">in</span> and <span class="code" style="background-color: aliceblue;">not in</span>. For example, <span class="code" style="background-color: ghostwhite;">"a" in "cat"</span> returns <span class="code" style="background-color: whitesmoke;">True</span>, while <span class="code" style="background-color: ghostwhite;">"dog" not in "cat"</span> also returns <span class="code" style="background-color: whitesmoke;">True</span>. For storing longer blocks of text, Python supports multiline strings, which can be created using triple quotes <span class="code" style="background-color: ghostwhite;">("""</span> or <span class="code" style="background-color: ghostwhite;">'''</span>). If you want to treat backslashes literally instead of as escape sequences, you can use raw strings by prefixing the string with r, for example <span class="code" style="background-color: ghostwhite;">r"C:\path\to\file"</span>.</p>
+  <p>Sometimes, you may need to work with encoded text, especially when dealing with files or networks. Strings can be converted to bytes using the <span class="code" style="background-color: ghostwhite;">.encode()</span> method and converted back using <span class="code" style="background-color: ghostwhite;">.decode()</span>. This is particularly important when working with different character encodings like UTF-8.</p>
+  <p style="margin-top: 12px;">Finally, Python makes string formatting easy. You can insert variables into strings using f-strings, which are fast and clean: <span class="code" style="background-color: ghostwhite;">f"My name is {name}"</span>. Other options include the older <span class="code" style="background-color: ghostwhite;">.format()</span> method and <span class="code" style="background-color: ghostwhite;">% formatting</span>, but f-strings are the modern and preferred way.</p>
+  <p style="margin-top: 12px;">There are also some advanced points about strings that are commonly asked in interviews. One of them is performance in string concatenation. Since strings are immutable, repeatedly using <span class="code" style="background-color: ghostwhite;">+</span> inside a loop creates many temporary string objects, which is inefficient. Instead, it's better to collect all parts into a list and then use <span class="code" style="background-color: ghostwhite;">"".join(list)</span> to build the final string efficiently.</p>
+  <p>Another interesting concept is string interning. Python sometimes stores only one copy of certain strings (especially small or frequently used ones) to save memory. This is why you might see cases where two identical strings point to the same object in memory. For example, <span class="code" style="background-color: ghostwhite;">"hello" is "hello"</span> may return True because of interning, but this behavior should not be relied upon for program logic &mdash; always use <span class="code" style="background-color: ghostwhite;">==</span> for value comparison.</p>
+  <p style="color: purple; font-weight: bold; margin-bottom: 0px; margin-top: 15px;">Getting Input from Users</p>
+  <div class="container">
+    <div class="code-block" style="margin-top: 0px; width: 50%;"><p>In Python, user input is taken using the <span class="code" style="background-color: aliceblue;">input()</span> function. This function always returns the entered value as a string. It can be called either without any argument or with a prompt string that appears on the console. In both cases, the user's input is returned as a string. Since the return type is always a string, you can use explicit type conversion (like <span class="code" style="background-color: ghostwhite;">int()</span> or <span class="code" style="background-color: ghostwhite;">float()</span>) to convert it into another data type when needed.</p></div>
+    <pre class="code-block" style="margin: 0px; width: 45%;"><code class="language-python" style="border-radius: 10px;">x = input()
+print(x)  # x is a string
+
+age = int(input(&quot;Enter your age: &quot;))
+print(f&quot;Your age is {age}&quot;)  # age is now an integer</code></pre>
+  </div>
+  <p>If you want to take multiple values in a single line, you can combine <span class="code" style="background-color: ghostwhite;">input()</span> with the <span class="code" style="background-color: aliceblue;">.split()</span> method. When a user enters multiple values separated by spaces, <span class="code" style="background-color: ghostwhite;">input()</span> reads the entire line as one string. The <span class="code" style="background-color: ghostwhite;">.split()</span> method then divides it into smaller parts and returns a list of substrings. You can assign these parts to variables directly:</p>
+  <div class="container">
+    <pre class="code-block" style="margin-top: 0px; width: 38%;"><code class="language-python" style="border-radius: 10px;">n1, n2, n3 = input(&quot;Enter 3 numbers separated by space: &quot;).split()
+print(f&quot;{n1} + {n2} + {n3} = {n1 + n2 + n3}&quot;)  
+# n1, n2, n3 are strings, so concatenation happens</code></pre>
+    <div class="code-block" style="margin-top: 0px; width: 60%;"><p>In this example, although the user enters numbers, Python still treats them as strings. So, the <b class="code" style="background-color: ghostwhite;">+</b> operator performs string concatenation instead of addition. To fix this, we can use the <span class="code" style="background-color: aliceblue;">map()</span> function, which applies a given function to each element of an iterable and returns an iterator with the results.</p></div>
+  </div>
+  <div class="container">
+    <div class="code-block"><p>For instance, <span class="code" style="background-color: ghostwhite;">map(int, "5")</span> applies the <span class="code" style="background-color: ghostwhite;">int()</span> function to each character in the string <q>5</q>, effectively converting it into the integer 5. When used with <span class="code" style="background-color: aliceblue;">input().split()</span>, it becomes a clean way to read and convert multiple inputs at once:</p></div>
+    <pre class="code-block" style="margin: 0px;"><code class="language-python" style="border-radius: 10px;">n1, n2, n3 = map(int, input(&quot;Enter 3 numbers separated by space: &quot;).split())
+print(f&quot;{n1} + {n2} + {n3} = {n1 + n2 + n3}&quot;)  # n1, n2, n3 are integers</code></pre>
+  </div>
+  <p>Here, each value entered by the user is automatically converted into an integer before being assigned. You can also use <span class="code" style="background-color: ghostwhite;">map(float, ...)</span> for decimal values or apply custom functions for specific conversions. Since <span class="code" style="background-color: ghostwhite;">map()</span> returns an iterator, you can convert it into a list using <span class="code" style="background-color: ghostwhite;">list(map(...))</span> if you need to store or print all converted values together.</p>
+  <p style="margin-top: 15px;">It's also important to note that <span class="code" style="background-color: ghostwhite;">input()</span> reads one full line at a time. It waits for the user to press Enter before processing the input, even if you type fewer characters. For reading multiple lines, you can use a loop or read from <span class="code" style="background-color: ghostwhite;">sys.stdin</span>, which is more common in competitive programming or file input scenarios.</p>
+  <div class="container">
+    <div class="code-block" style="margin: 0px;">
+      <ul>
+        <li>
+          <p>
+            What is the return type of <span class="code" style="background-color: ghostwhite; font-size: 95%;">input()</span>?
+            <br>
+            <span style="margin-left: 20px;">Always a string, regardless of what the user enters.</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            How can you take multiple inputs in a single line?
+            <br>
+            <span style="margin-left: 20px;">By combining <span class="code" style="background-color: ghostwhite; font-size: 95%;">input().split()</span> and optionally <span class="code" style="background-color: ghostwhite; font-size: 95%;">map()</span> for type conversion.</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            Why is <span class="code" style="background-color: ghostwhite; font-size: 95%;">map()</span> preferred over manually converting each value?
+            <br>
+            <span style="margin-left: 20px;">Because it automatically applies conversion to all elements, making code cleaner and faster.</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="code-block" style="margin: 0px;">
+      <ul>
+        <li>
+          <p style="margin-top: 25px;">
+            What happens if you use <b class="code" style="background-color: ghostwhite;">+</b> on input values without converting them?
+            <br>
+            <span style="margin-left: 20px;">String concatenation occurs instead of addition.</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            Can you take multiple lines of input using <span class="code" style="background-color: ghostwhite; font-size: 95%;">input()</span>?
+            <br>
+            <span style="margin-left: 20px;">Yes, by calling <span class="code" style="background-color: ghostwhite; font-size: 95%;">input()</span> repeatedly inside a loop.</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    style="width: 55%; border-radius: 5px; overflow-x: auto; margin: 8px 0px;"
+    <span style="font-family: monospace; font-size: 105%;">
+    <p style="color: purple; font-weight: bold; margin-bottom: 0px;">Heading</p>
+    <p style="margin-top: 0px;"></p>
+-->
+
+<!-- Code Single
+<p class="codeName">Class Name</p>
+<pre><code class="language-java" style="border-radius: 10px;">
+    Class Code
+</code></pre>
+-->
+
+<!-- Code Double
+<div class="container">
+    <pre class="code-block"><code class="language-python" style="border-radius: 10px;">code1</code></pre>
+    <pre class="code-block"><code class="language-python" style="border-radius: 10px;">code2</code></pre>
+</div>
+-->
+
+<!-- commands
+            <div class="cmd-block" style="width: 30%;">
+                <div class="cmd-label">heading</div>
+                <svg class="copy-icon"
+                     onclick="(function() {
+                       navigator.clipboard.writeText('docker ps')
+                         .then(() => console.log('Copied!'))
+                         .catch(err => console.error('Failed to copy: ', err));
+                     })()"
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     style="cursor: pointer; width: 20px; height: 20px;">
+                  <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
+                </svg>
+                <pre>docker ps</pre>
+              </div>
+-->
+
+<!-- Command Double
+            <div class="container">
+                <div class="code-block" style="width: 29%;">
+                    <div class="cmd-block">
+                        <div class="cmd-label">docker run</div>
+                        <svg class="copy-icon"
+                             onclick="(function() {
+                               navigator.clipboard.writeText('docker run')
+                                 .then(() => console.log('Copied!'))
+                                 .catch(err => console.error('Failed to copy: ', err));
+                             })()"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 24 24"
+                             style="cursor: pointer; width: 20px; height: 20px;">
+                          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
+                        </svg>
+                        <pre>docker run</pre>
+                      </div>
+                </div>
+                <div class="code-block" style="width: 70%;">
+                    <p style="margin-top: 12px;"></p>
+                </div>
+            </div>
+-->
+
+<!-- Image code
+<img src="" alt="alt" style="width: 70%; border: none;" />
+
+<div style="width: 90%; height: 350px; display: block; overflow: auto; border: 3px solid #2a6099; margin: 0px auto; border-radius: 8px;">
+  <img src="" alt="creating AWS Lambda Function" style="width: 100%; border: none;" />
+</div>
+-->
+    
+    <script>
+        hljs.highlightAll(); 
+    </script>
+    <script>
+        function copyToClipboard() {
+          const text = document.getElementById("command").innerText;
+          navigator.clipboard.writeText(text).then(() => {
+            console.log("Copied!");
+          }).catch(err => {
+            console.error("Failed to copy: ", err);
+          });
+        }
+    </script>
+</body>
+</html>
