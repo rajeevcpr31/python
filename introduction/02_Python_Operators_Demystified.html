@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
+    <title>Python Operators</title>
     <style type="text/css">
         .container {
             display: flex;
@@ -175,113 +175,230 @@ print(f&quot;{n1} + {n2} + {n3} = {n1 + n2 + n3}&quot;)  # n1, n2, n3 are intege
       </ul>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-    style="width: 55%; border-radius: 5px; overflow-x: auto; margin: 8px 0px;"
-    <span style="font-family: monospace; font-size: 105%;">
-    <p style="color: purple; font-weight: bold; margin-bottom: 0px;">Heading</p>
-    <p style="margin-top: 0px;"></p>
--->
-
-<!-- Code Single
-<p class="codeName">Class Name</p>
-<pre><code class="language-java" style="border-radius: 10px;">
-    Class Code
-</code></pre>
--->
-
-<!-- Code Double
+  <p style="color: purple; font-weight: bold; margin-bottom: 0px; margin-top: 15px;">Operators in Python</p>
+  <p style="margin-top: 0px;">Operators are special symbols or keywords in Python that perform operations on variables and values. They allow you to perform arithmetic, compare data, make logical decisions, and much more. Python provides different types of operators for different purposes, and understanding how they work is essential for writing efficient programs.</p>
+  <p style="color: seagreen; margin-bottom: 0px;">Arithmetic Operators</p>
+  <p style="margin-top: 0px;">Arithmetic operators perform mathematical operations like addition, subtraction, multiplication, and division. Python supports seven arithmetic operators:</p>
+  <ul>
+    <li><b style="font-size: 90%;">Addition (+):</b> Adds two numbers. Example: <span class="code" style="background-color: ghostwhite; font-size: 95%;">print(12 + 8)</span> → 20</li>
+    <li><b style="font-size: 90%;">Subtraction (-):</b> Subtracts the right operand from the left. Example: <span class="code" style="background-color: ghostwhite; font-size: 95%;">print(12 - 8)</span> → 4</li>
+    <li><b style="font-size: 90%;">Multiplication (*):</b> Multiplies two numbers. Example: <span class="code" style="background-color: ghostwhite; font-size: 95%;">print(12 * 8)</span> → 96</li>
+    <li><b style="font-size: 90%;">Division (/):</b> Divides left operand by right, always returns a float. Example: <span class="code" style="background-color: ghostwhite; font-size: 95%;">print(12 / 8)</span> → 1.5</li>
+    <li><b style="font-size: 90%;">Floor Division (//):</b> Divides and removes the decimal part. Example: <span class="code" style="background-color: ghostwhite; font-size: 95%;">print(12 // 8)</span> → 1</li>
+    <li><b style="font-size: 90%;">Modulus (%):</b> Returns the remainder of the division. Example: <span class="code" style="background-color: ghostwhite; font-size: 95%;">print(12 % 8)</span> → 4</li>
+    <li><b style="font-size: 90%;">Exponentiation (**):</b> Raises a number to the power of another. Example: <span class="code" style="background-color: ghostwhite; font-size: 95%;">print(2 ** 3)</span> → 8</li>
+  </ul>
+  <p>In Python, integers and floats can grow or shrink based on available memory rather than having a fixed size, unlike many other languages. For example, <span class="code" style="background-color: ghostwhite;">r = 5 ** 100</span> produces a very large integer value without overflow. Python automatically adjusts the size of integers as needed.</p>
+  <p>Operator precedence determines the order in which operations are performed. Python follows the standard mathematical rules &mdash; expressions inside parentheses are evaluated first, followed by exponentiation, multiplication/division, and finally addition/subtraction. For example, <span class="code" style="background-color: ghostwhite;">2 + 3 * 4</span> results in 14 because multiplication has higher precedence than addition. You can override this order using parentheses like <span class="code" style="background-color: ghostwhite;">(2 + 3) * 4</span>, which gives 20.</p>
+  <p style="color: seagreen; margin-bottom: 0px;">Assignment Operators</p>
+  <p style="margin: 0px;">Assignment operators are used to assign values to variables. The basic assignment operator is <span class="code" style="background-color: #e4e4e4;">=</span>, for example: <span class="code" style="background-color: ghostwhite;">age = 25</span>. Python also supports compound assignment operators that perform an operation and assignment in a single step:</p>
+  <div class="container">
+    <div class="code-block" style="margin: 0px; width: 24%;">
+      <ul style="margin: 0px;">
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">+=</span> (Add and assign)</li>
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">-=</span> (Subtract and assign)</li>
+      </ul>
+    </div>
+    <div class="code-block" style="margin: 0px; width: 24%;">
+      <ul style="margin: 0px;">
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">*=</span> (Multiply and assign)</li>
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">/=</span> (Divide and assign)</li>
+      </ul>
+    </div>
+    <div class="code-block" style="margin: 0px; width: 24%;">
+      <ul style="margin: 0px;">
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">//=</span> (Floor divide and assign)</li>
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">%=</span> (Modulus and assign)</li>
+      </ul>
+    </div>
+    <div class="code-block" style="margin: 0px; width: 24%;">
+      <ul style="margin: 0px;">
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">**=</span> (Exponentiation and assign)</li>
+      </ul>
+    </div>
+  </div>
+  <p>Compound assignment operators make code cleaner and more efficient. For example, instead of writing <span class="code" style="background-color: ghostwhite;">x = x + 5</span>, you can simply write <span class="code" style="background-color: ghostwhite;">x += 5</span>.</p>
+<p style="color: seagreen; margin-bottom: 0px;">Comparison Operators</p>
+<p style="margin: 0px;">Comparison operators (also called relational operators) compare two values and return a Boolean result &mdash; either <span class="code" style="background-color: ghostwhite;">True</span> or <span class="code" style="background-color: ghostwhite;">False</span>.</p>
 <div class="container">
-    <pre class="code-block"><code class="language-python" style="border-radius: 10px;">code1</code></pre>
-    <pre class="code-block"><code class="language-python" style="border-radius: 10px;">code2</code></pre>
+    <div class="code-block" style="margin: 0px;">
+      <ul>
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">==</span> (Equal to): Checks if values are equal. Example: <span class="code" style="background-color: ghostwhite; font-size: 95%;">12 == 12.5</span> → False</li>
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">!=</span> (Not equal to): Checks if values are not equal.</li>
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">&gt;</span> (Greater than): Example: <span class="code" style="background-color: ghostwhite; font-size: 95%;">12.5 > 12</span> → True</li>
+      </ul>
+    </div>
+    <div class="code-block" style="margin: 0px;">
+      <ul>
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">&lt;</span> (Less than)</li>
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">&gt;=</span> (Greater than or equal to)</li>
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">&lt;=</span> (Less than or equal to)</li>
+      </ul>
+    </div>
 </div>
--->
-
-<!-- commands
-            <div class="cmd-block" style="width: 30%;">
-                <div class="cmd-label">heading</div>
-                <svg class="copy-icon"
-                     onclick="(function() {
-                       navigator.clipboard.writeText('docker ps')
-                         .then(() => console.log('Copied!'))
-                         .catch(err => console.error('Failed to copy: ', err));
-                     })()"
-                     xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     style="cursor: pointer; width: 20px; height: 20px;">
-                  <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
-                </svg>
-                <pre>docker ps</pre>
-              </div>
--->
-
-<!-- Command Double
-            <div class="container">
-                <div class="code-block" style="width: 29%;">
-                    <div class="cmd-block">
-                        <div class="cmd-label">docker run</div>
-                        <svg class="copy-icon"
-                             onclick="(function() {
-                               navigator.clipboard.writeText('docker run')
-                                 .then(() => console.log('Copied!'))
-                                 .catch(err => console.error('Failed to copy: ', err));
-                             })()"
-                             xmlns="http://www.w3.org/2000/svg"
-                             viewBox="0 0 24 24"
-                             style="cursor: pointer; width: 20px; height: 20px;">
-                          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
-                        </svg>
-                        <pre>docker run</pre>
-                      </div>
-                </div>
-                <div class="code-block" style="width: 70%;">
-                    <p style="margin-top: 12px;"></p>
-                </div>
-            </div>
--->
-
-<!-- Image code
-<img src="" alt="alt" style="width: 70%; border: none;" />
-
-<div style="width: 90%; height: 350px; display: block; overflow: auto; border: 3px solid #2a6099; margin: 0px auto; border-radius: 8px;">
-  <img src="" alt="creating AWS Lambda Function" style="width: 100%; border: none;" />
+<p>Comparison works for both numbers and strings. When comparing strings, Python compares their Unicode (ASCII) values. For example, <q>A</q> &gt; <q>B</q> is <span class="code" style="background-color: ghostwhite; width: 99%;">False</span> because the Unicode of <q>A</q> (65) is smaller than <q>B</q> (66). For multi-character strings like <q>ABC</q> &gt; <q>ACD</q>, comparison occurs character by character from left to right until a difference is found.</p>
+<div class="container">
+    <div class="code-block" style="overflow:hidden; width: 60%; margin: 0px;">
+      <p style="margin: 0px;">Comparing different data types like strings and numbers will raise a <span class="code" style="background-color: ghostwhite;">TypeError</span>.</p>
+      <p style="margin-bottom: 0px;">It's also important to understand the difference between value comparison and reference comparison:</p>
+      <ul style="margin-top: 0px;">
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">==</span> checks if two variables have the same value.</li>
+        <li><span class="code" style="background-color: ghostwhite; font-size: 95%;">is</span> checks if two variables refer to the same object in memory.</li>
+      </ul>
+    </div>
+    <pre class="code-block" style="margin: 0px; width: 38%;"><code class="language-python" style="border-radius: 10px;">a = [1, 2, 3]
+b = [1, 2, 3]
+print(a == b)  # True (same content)
+print(a is b)  # False (different objects)</code></pre>
 </div>
--->
-    
+<p style="color: seagreen; margin-bottom: 0px;">Logical Operators</p>
+<div class="container">
+    <div class="code-block" style="margin: 0px; width: 44%;">
+      <p style="margin-top: 0px;">Logical operators are used to combine multiple conditions and return a Boolean result (True or False).</p>
+      <ul>
+        <li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">and</span>: Returns True if both conditions are true.</li>
+        <li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">or</span>: Returns True if at least one condition is true.</li>
+        <li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">not</span>: Reverses the Boolean value.</li>
+      </ul>
+      <p style="margin-top: 0px;">Logical operators work on Boolean expressions, as shown below:</p>
+    </div>
+    <div class="code-block" style="margin: 0px; width: 50%;">
+      <table border="1" cellspacing="0" cellpadding="8" 
+       style="border-collapse: collapse; text-align: center; width: 99%;">
+        <thead>
+          <tr>
+            <th><b>Condition 1</b></th>
+            <th><b>Condition 2</b></th>
+            <th><b>and</b></th>
+            <th><b>or</b></th>
+            <th><b>not Condition 1</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>True</td>
+            <td>True</td>
+            <td>True</td>
+            <td>True</td>
+            <td>False</td>
+          </tr>
+          <tr>
+            <td>True</td>
+            <td>False</td>
+            <td>False</td>
+            <td>True</td>
+            <td>False</td>
+          </tr>
+          <tr>
+            <td>False</td>
+            <td>True</td>
+            <td>False</td>
+            <td>True</td>
+            <td>True</td>
+          </tr>
+          <tr>
+            <td>False</td>
+            <td>False</td>
+            <td>False</td>
+            <td>False</td>
+            <td>True</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+<p style="color: seagreen; margin-bottom: 0px;">Bitwise Operators</p>
+<div class="container">
+    <div class="code-block" style="width: 44%; margin: 0px;">
+      <p style="margin-top: 0px;">Bitwise operators work at the binary level. They treat numbers as sequences of bits (0s and 1s) and perform bit-by-bit operations.</p>
+      <ul>
+        <Li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">& (AND)</span>: Returns 1 if both bits are 1.</Li>
+        <Li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">| (OR)</span>: Returns 1 if at least one bit is 1.</Li>
+        <Li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">^ (XOR)</span>: Returns 1 if only one bit is 1.</Li>
+        <Li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">~ (NOT)</span>: Inverts all bits.</Li>
+        <Li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">&lt;&lt; (Left Shift)</span>: Shifts bits to the left, filling zeros from the right.</Li>
+        <Li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">&gt;&gt; (Right Shift)</span>: Shifts bits to the right.</Li>
+      </ul>
+    </div>
+    <div class="code-block" style="width: 50%; margin: 0px;">
+      <table border="1" cellspacing="0" cellpadding="8" 
+       style="border-collapse: collapse; text-align: center; width: 99%;">
+        <thead>
+          <tr>
+            <th><b>Bit 1</b></th>
+            <th><b>Bit 2</b></th>
+            <th><b>AND (&amp;)</b></th>
+            <th><b>OR (|)</b></th>
+            <th><b>XOR (^)</b></th>
+            <th><b>NOT (~Bit1)</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+<div class="container">
+    <div class="code-block">
+      <p style="color: seagreen; margin-bottom: 0px;">Identity Operators</p>
+      <p style="margin: 0px;">Identity operators are used to compare the memory location of two objects rather than their values.</p>
+      <ul style="margin: 0px;">
+        <li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">is</span>: Returns <span class="code" style="background-color: whitesmoke; font-size: 95%;">True</span> if two variables point to the same object.</li>
+        <li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">is not</span>: Returns <span class="code" style="background-color: whitesmoke; font-size: 95%;">True</span> if they point to different objects.</li>
+      </ul>
+      <pre><code class="language-python" style="border-radius: 12px; width: 60%;">x = [1, 2]
+y = x
+z = [1, 2]
+print(x is y)   # True
+print(x is z)   # False</code></pre>
+      <p>Even though <span class="code" style="background-color: ghostwhite;">x</span> and <span class="code" style="background-color: ghostwhite;">z</span> contain the same data, they are stored at different memory locations.</p>
+    </div>
+    <div class="code-block">
+      <p style="color: seagreen; margin-bottom: 0px;">Membership Operators</p>
+      <p style="margin: 0px;">Membership operators check whether a value exists within a sequence such as a list, tuple, set, string, or dictionary.</p>
+      <Ul style="margin-top: 0px;">
+        <li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">in</span>: Returns <span class="code" style="background-color: whitesmoke; font-size: 95%;">True</span> if the value exists in the sequence.</li>
+        <li><span class="code" style="background-color: #e4e4e4; font-size: 95%;">not in</span>: Returns <span class="code" style="background-color: whitesmoke; font-size: 95%;">True</span> if the value does not exist.</li>
+        <pre style="margin-top: 6px;"><code class="language-python" style="border-radius: 12px; width: 60%;">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+print(&quot;apple&quot; in fruits)      # True
+print(&quot;grape&quot; not in fruits)  # True</code></pre>
+      </Ul>
+    </div>
+</div>
+<p style="color:chocolate; margin-bottom: 0px; margin-top: 15px; font-weight: bold;">Operator Precedence</p>
+<p style="margin-top: 0px;">Operator precedence determines the order in which operations are evaluated in an expression. From highest to lowest precedence, the order is: <span class="code" style="background-color: ghostwhite;">()</span> <b style="color: green;">→</b> <span class="code" style="background-color: ghostwhite;">**</span> <b style="color: green;">→</b> <span class="code" style="background-color: ghostwhite;">*</span>, <span class="code" style="background-color: ghostwhite;">/</span>, <span class="code" style="background-color: ghostwhite;">//</span>, <span class="code" style="background-color: ghostwhite;">%</span> <b style="color: green;">→</b> <span class="code" style="background-color: ghostwhite;">+</span>, <span class="code" style="background-color: ghostwhite;">-</span> <b style="color: green;">→</b> comparison (<span class="code" style="background-color: ghostwhite;">&lt;</span>, <span class="code" style="background-color: ghostwhite;">&gt;</span>, <span class="code" style="background-color: ghostwhite;">==</span>, <span class="code" style="background-color: ghostwhite;">!=</span>) <b style="color: green;">→</b> logical (<span class="code" style="background-color: ghostwhite;">not</span>, <span class="code" style="background-color: ghostwhite;">and</span>, <span class="code" style="background-color: ghostwhite;">or</span>) <b style="color: green;">→</b> assignment (<span class="code" style="background-color: ghostwhite;">=</span>, <span class="code" style="background-color: ghostwhite;">+=</span>, <span class="code" style="background-color: ghostwhite;">-=</span>, etc)</span>. Parentheses always have the highest precedence, so using them is the best way to ensure clarity and control in complex expressions.</p>
     <script>
         hljs.highlightAll(); 
     </script>
